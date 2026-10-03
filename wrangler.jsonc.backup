@@ -1,0 +1,26 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "ceonix-api",
+	"main": "worker/index.ts",
+	"compatibility_date": "2026-10-03",
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "ceonix-db",
+			"database_id": "00000000-0000-0000-0000-000000000000",
+			"migrations_dir": "migrations"
+		},
+		{
+			"binding": "ceonix_db",
+			"database_name": "ceonix-db",
+			"database_id": "a2e09e46-c44f-41e5-a8b0-7fbb5bb0e4d3",
+			"remote": true
+		}
+	],
+	"r2_buckets": [
+		{
+			"binding": "FILES",
+			"bucket_name": "ceonix-files"
+		}
+	]
+}

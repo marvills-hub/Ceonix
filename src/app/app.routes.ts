@@ -1,3 +1,36 @@
-import { Routes } from '@angular/router';
-
-export const routes: Routes = [];
+import{Routes}from'@angular/router';
+import{Shell}from'./layout/shell';
+import{Dashboard}from'./features/dashboard/dashboard';
+import{Login}from'./features/login/login';
+import{Chat}from'./features/chat/chat';
+import{Meals}from'./features/meals/meals';
+import{Polls}from'./features/polls/polls';
+import{Announcements}from'./features/announcements/announcements';
+import{Employees}from'./features/employees/employees';
+import{Events}from'./features/events/events';
+import{Requests}from'./features/requests/requests';
+import{Files}from'./features/files/files';
+import{Notifications}from'./features/notifications/notifications';
+import{Profile}from'./features/profile/profile';
+import{Settings}from'./features/settings/settings';
+import{Admin}from'./features/admin/admin';
+import{authGuard}from'./core/services/auth.guard';
+export const routes:Routes=[
+{path:'login',component:Login},
+{path:'',component:Shell,canActivate:[authGuard],children:[
+{path:'',component:Dashboard},
+{path:'chat',component:Chat},
+{path:'meals',component:Meals},
+{path:'polls',component:Polls},
+{path:'announcements',component:Announcements},
+{path:'employees',component:Employees},
+{path:'events',component:Events},
+{path:'requests',component:Requests},
+{path:'files',component:Files},
+{path:'notifications',component:Notifications},
+{path:'profile',component:Profile},
+{path:'settings',component:Settings},
+{path:'admin',component:Admin}
+]},
+{path:'**',redirectTo:''}
+];

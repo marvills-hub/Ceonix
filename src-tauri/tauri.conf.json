@@ -1,0 +1,44 @@
+{
+  "$schema":"https://schema.tauri.app/config/2",
+  "productName":"CEONIX",
+  "version":"1.0.0",
+  "identifier":"com.ceosi.ceonix",
+  "build":{
+    "beforeDevCommand":"npm start",
+    "devUrl":"http://localhost:4200",
+    "beforeBuildCommand":"npm run build",
+    "frontendDist":"../dist/ceonix/browser"
+  },
+  "app":{
+    "windows":[
+      {
+        "title":"CEONIX - CEOSI Employee Connect",
+        "width":1440,
+        "height":900,
+        "minWidth":1100,
+        "minHeight":700,
+        "resizable":true,
+        "fullscreen":false,
+        "center":true
+      }
+    ],
+    "security":{
+      "csp":null
+    }
+  },
+  "bundle":{
+    "active":true,
+    "targets":["nsis","msi"],
+    "icon":[
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "windows":{
+      "nsis":{
+        "installMode":"currentUser"
+      }
+    }
+  }
+}

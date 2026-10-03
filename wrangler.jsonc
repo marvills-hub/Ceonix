@@ -1,0 +1,20 @@
+{
+  "$schema":"node_modules/wrangler/config-schema.json",
+  "name":"ceonix",
+  "main":"worker/index.ts",
+  "compatibility_date":"2026-10-03",
+  "assets":{
+    "directory":"./dist/ceonix/browser",
+    "binding":"ASSETS",
+    "not_found_handling":"single-page-application",
+    "run_worker_first":["/api/*"]
+  },
+  "d1_databases":[
+    {
+      "binding":"DB",
+      "database_name":"ceonix-db",
+      "database_id":"a2e09e46-c44f-41e5-a8b0-7fbb5bb0e4d3",
+      "migrations_dir":"migrations"
+    }
+  ]
+}
